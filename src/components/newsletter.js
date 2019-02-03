@@ -34,16 +34,36 @@ const Newsletter = () => {
         </form>
         <span className="newsletter__info">
           Get weekly updates about{' '}
-          <b>web, browsers, interesting articles, pwa's etc</b> in your inbox.
+          <b>web, browsers, interesting articles, pwa's</b> etc, in your inbox.
           No spams.
         </span>
-        <span className="newsletter__info">
-          To get featured in our newsletter{' '}
-          <a href="/" id="submit">
-            submit
-          </a>{' '}
-          here.
-        </span>
+      </div>
+
+      <div className="newsletter__curators">
+        <b>Curators </b> -
+        <a
+          href="https://github.com/gokulkrishh"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Gokul
+        </a>
+        ·
+        <a
+          href="https://github.com/hemanth"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Hemanth
+        </a>
+        ·
+        <a
+          href="https://github.com/shidhincr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Shidhin
+        </a>
       </div>
     </div>
   )

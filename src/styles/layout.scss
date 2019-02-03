@@ -47,7 +47,7 @@ h1 {
 
 .content {
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
+  grid-template-columns: 0.6fr 1fr;
   min-height: 100vh;
 
   &__left {
@@ -55,7 +55,8 @@ h1 {
   }
 
   &__right {
-    padding: 20px 30px;
+    padding: 30px 60px;
+    background-color: #FAFAFA;
   }
 }
 

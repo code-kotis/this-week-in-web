@@ -2,11 +2,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  min-height: 100vh;
+  margin-top: 200px;
 
   &__content {
     width: 380px;
+    top: 200px;
+  }
+
+  &__curators {
+    width: 400px;
+    display: flex;
+    margin-top: 60px;
+
+    b,
+    a {
+      margin: 0 10px;
+    }
+
+    a {
+      font-weight: $font-weight-normal;
+    }
   }
 
   form {
@@ -21,7 +37,7 @@
 
     &[type='email'] {
       width: 300px;
-      height: 46px;
+      height: 50px;
       padding: 0 10px;
       border-right: 0;
       font-size: 15px;
@@ -35,7 +51,7 @@
   input[type='submit'] {
     width: 90px;
     border: none;
-    height: 46px;
+    height: 50px;
     font-size: 16px;
     cursor: pointer;
     margin-left: -10px;
@@ -50,13 +66,6 @@
       opacity: 0.9;
     }
   }
-
-  .newsletter__count {
-    width: 350px;
-    margin-bottom: 8px;
-    font-size: 14px;
-  }
-
 
   h1 {
     margin-bottom: 40px;
@@ -79,10 +88,10 @@
 
   .newsletter__info {
     width: 370px;
-    font-size: 14px;
-    margin-top: 16px;
+    font-size: 13px;
+    margin-top: 20px;
     display: inline-block;
-    line-height: 20px;
+    line-height: 22px;
   }
 }
 
