@@ -4,10 +4,11 @@
   align-items: center;
   min-height: 100vh;
   margin-top: 200px;
+  position: sticky;
+  top: 200px;
 
   &__content {
     width: 380px;
-    top: 200px;
   }
 
   &__curators {
@@ -15,8 +16,7 @@
     display: flex;
     margin-top: 60px;
 
-    b,
-    a {
+    b, a {
       margin: 0 10px;
     }
 
@@ -78,20 +78,21 @@
     }
   }
 
-  h2 {
-    margin-bottom: 20px;
+  h3 {
+    margin-bottom: 25px;
   }
 
-  h1, h2 {
+  h1, h3 {
     text-transform: capitalize;
   }
 
-  .newsletter__info {
+  &__info {
     width: 370px;
     font-size: 13px;
     margin-top: 20px;
     display: inline-block;
     line-height: 22px;
+    margin-left: 2px;
   }
 }
 

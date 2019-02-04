@@ -14,10 +14,9 @@ html, body {
 }
 
 body {
-  background-color: $color-grey;
   color: $color-black;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: normal;
+  font-family: $font-family;
+  font-weight: $font-weight-normal;
   font-size: 14px;
   -webkit-tap-highlight-color: transparent;
   -ms-text-size-adjust: 100%;
@@ -45,6 +44,14 @@ h1 {
   font-size: 38px;
 }
 
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
 .content {
   display: grid;
   grid-template-columns: 0.6fr 1fr;
@@ -55,8 +62,8 @@ h1 {
   }
 
   &__right {
+    background-color: $color-grey;
     padding: 30px 60px;
-    background-color: #FAFAFA;
   }
 }
 

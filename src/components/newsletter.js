@@ -8,7 +8,7 @@ const Newsletter = () => {
         <h1>
           <Link to="/">this week in web</Link>
         </h1>
-        <h2>subscribe to our newsletter</h2>
+        <h3>subscribe to weekly newsletter</h3>
         <form action="" method="post" target="_blank">
           <input
             className="email-address"

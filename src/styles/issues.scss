@@ -10,7 +10,7 @@
 .issue {
   height: 90px;
   margin-bottom: 20px;
-  border-bottom: 1px dashed #a5a5a5;
+  border-bottom: $border-dotted;
   display: flex;
 
   &__info {
@@ -29,16 +29,42 @@
   }
 
   &__no {
-    background-color: #f4e588;
+    background-color: $color-dark-bg-primary;
     border-radius: 3px;
     text-align: center;
     height: 20px;
     font-size: 13px;
     line-height: 20px;
     width: 70px;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
   }
 
   &__date {
+    font-size: 13px;
+    color: $color-black;
+  }
+}
 
+.issue__preview {
+  .issue {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .issue h2 {
+    margin-bottom: 8px;
+  }
+
+  .issue__back {
+    margin-bottom: 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  .issue__content {
+    min-height: 500px;
+    background-color: $color-white;
   }
 }

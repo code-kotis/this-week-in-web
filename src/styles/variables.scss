@@ -4,17 +4,21 @@
 $color-white: #fff;
 $color-dark: #212121;
 $color-black: #424242;
-$color-grey: #fbfafa;
+$color-dark-grey: #a5a5a5;
+$color-grey: #FAFAFA;
 
 // Background
 $color-bg-primary: #f3e48e;
+$color-dark-bg-primary: #f4e588;
 
 /* Fonts */
+$font-family: 'Open Sans', sans-serif;
 
 $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-bold: 600;
 
 /* Border */
+$border-dotted: 1px dashed $color-dark-grey;
 
 $border-radius: 8px;

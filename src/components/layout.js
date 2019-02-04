@@ -2,9 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-import ContentLeft from './contentLeft'
-import ContentRight from './contentRight'
-
 import '../styles/main.scss'
 
 const Layout = ({ children }) => (
@@ -18,12 +15,7 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
-      <div className="content">
-        <ContentLeft siteTitle={data.site.siteMetadata.title} />
-        <ContentRight />
-      </div>
-    )}
+    render={() => <div className="content">{children}</div>}
   />
 )
 
