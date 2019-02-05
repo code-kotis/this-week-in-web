@@ -45,3 +45,26 @@
 //     color: $color-black;
 //   }
 // }
+
+.issue__preview {
+  .issue {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .issue h2 {
+    margin-bottom: 8px;
+  }
+
+  .issue__back {
+    margin-bottom: 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  .issue__content {
+    min-height: 500px;
+    background-color: $color-white;
+  }
+}
