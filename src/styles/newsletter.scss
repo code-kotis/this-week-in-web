@@ -17,7 +17,7 @@
     margin-top: 60px;
 
     b, a {
-      margin: 0 10px;
+      margin: 0 7px;
     }
 
     a {
@@ -80,6 +80,7 @@
 
   h3 {
     margin-bottom: 25px;
+    font-weight: $font-weight-semi-bold;
   }
 
   h1, h3 {
@@ -88,7 +89,7 @@
 
   &__info {
     width: 370px;
-    font-size: 13px;
+    font-size: 14px;
     margin-top: 20px;
     display: inline-block;
     line-height: 22px;

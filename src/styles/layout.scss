@@ -25,7 +25,9 @@ body {
 
 a {
   color: $color-black;
-  text-decoration-line: underline;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  padding-bottom: 3px;
 
   &:hover {
     opacity: 0.85;
@@ -41,15 +43,15 @@ a, h1, h2, h3 {
 }
 
 h1 {
-  font-size: 38px;
+  font-size: 40px;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 26px;
 }
 
 h3 {
-  font-size: 22px;
+  font-size: 21px;
 }
 
 .content {
@@ -62,7 +64,7 @@ h3 {
   }
 
   &__right {
-    background-color: $color-grey;
+    background-color: $color-light-grey;
     padding: 30px 60px;
   }
 }

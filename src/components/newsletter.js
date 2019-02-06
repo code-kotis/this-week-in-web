@@ -33,9 +33,8 @@ const Newsletter = () => {
           />
         </form>
         <span className="newsletter__info">
-          Get weekly updates about{' '}
-          <b>web, browsers, interesting articles, pwa's</b> etc, in your inbox.
-          No spams.
+          Get weekly coverage about what's happening in <b>web community</b>. No
+          spams.
         </span>
       </div>
 
