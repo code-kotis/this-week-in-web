@@ -15,13 +15,13 @@ export default function Template({ data }) {
       <ContentRight>
         <div className="issue">
           <Link to="/" className="issue__preview-back">
-            ← Go back
+            ← All Issues
           </Link>
           <div className="issue__preview-info">
             <h2 className="title">{frontmatter.title}</h2>
             <time>{frontmatter.date}</time>
-            <p></p>
           </div>
+          <h2 className="line" />
           <div
             className="issue__preview-content"
             dangerouslySetInnerHTML={{ __html: html }}

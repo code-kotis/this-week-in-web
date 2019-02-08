@@ -21,25 +21,32 @@ export default class IndexPage extends React.Component {
         />
         <ContentLeft siteTitle="this week in web" />
         <ContentRight>
-          <h2>All Issues</h2>
-          <div className="issues">
-            {posts.map(({ node }, index) => {
-              const title = get(node, 'frontmatter.title') || node.fields.slug
-              return (
-                <div className="issue" key={title}>
-                  <div className="issue__info">
-                    <span className="issue__no">Issue: {index + 1}</span>
-                    <time className="issue__date">{node.frontmatter.date}</time>
+          <div className="issue">
+            <div className="issue__preview-info issue__preview-info--small">
+              <h2 className="title">{'All Issues'}</h2>
+            </div>
+            <h2 className="line" />
+            <div className="issue__preview-content">
+              {posts.map(({ node }, index) => {
+                const title = get(node, 'frontmatter.title') || node.fields.slug
+                return (
+                  <div className="issue__item" key={title}>
+                    <div className="issue__info">
+                      <span className="issue__no">Issue: {index + 1}</span>
+                      <time className="issue__date">
+                        {node.frontmatter.date}
+                      </time>
+                    </div>
+                    <Link
+                      to={`issues${node.fields.slug}`}
+                      className="issue__title"
+                    >
+                      {title}
+                    </Link>
                   </div>
-                  <Link
-                    to={`issues${node.fields.slug}`}
-                    className="issue__title"
-                  >
-                    {title}
-                  </Link>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
         </ContentRight>
       </Layout>
