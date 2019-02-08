@@ -14,9 +14,7 @@
     height: 90px;
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
     padding: 10px 0;
-    margin-bottom: 20px;
     align-items: center;
 
     h2 {
@@ -101,7 +99,7 @@
 }
 
 .line {
-  margin: 15px 0;
+  margin: 10px 0;
   border-width: 2px;
   font-weight: lighter;
   border-image: linear-gradient(to right, rgba(0, 0, 0, 0),
