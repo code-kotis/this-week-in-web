@@ -36,32 +36,38 @@ const Newsletter = () => {
           Get weekly coverage about what's happening in <b>web community</b>. No
           spams.
         </span>
+        <div className="newsletter__curators">
+          <b>Curators </b> -
+          <a
+            href="https://github.com/gokulkrishh"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Gokul
+          </a>
+          ·
+          <a
+            href="https://github.com/hemanth"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hemanth
+          </a>
+          ·
+          <a
+            href="https://github.com/shidhincr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Shidhin
+          </a>
+        </div>
       </div>
 
-      <div className="newsletter__curators">
-        <b>Curators </b> -
-        <a
-          href="https://github.com/gokulkrishh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Gokul
-        </a>
-        ·
-        <a
-          href="https://github.com/hemanth"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hemanth
-        </a>
-        ·
-        <a
-          href="https://github.com/shidhincr"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Shidhin
+      <div className="newsletter__copyright">
+        &copy; {new Date().getFullYear()} &middot; Built with{' '}
+        <a href="http://gatsbyjs.org" target="_blank" rel="noopener noreferrer">
+          http://gatsbyjs.org
         </a>
       </div>
     </div>

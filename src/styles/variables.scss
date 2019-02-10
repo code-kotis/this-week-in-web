@@ -1,6 +1,4 @@
 /* Colors */
-
-// Generic
 $color-white: #fff;
 $color-dark: #212121;
 $color-black: #424242;
@@ -12,24 +10,15 @@ $color-light-blue: #2196F3;
 $color-dark-violet: #3f51b5;
 $color-blue: #357ae8;
 $color-violet: #4054c2;
-$color-light-violet: #8a69c5;
+$color-light-rose: #EC407A;
 
-// Background
+// Background Colors
 $color-bg-primary: #f3e48e;
 $color-dark-bg-primary: #f4e588;
 
 /* Fonts */
-$font-family: -apple-system,
-BlinkMacSystemFont,
-Helvetica,
-sans-serif;
-$font-family-code: 'SF Mono',
-'Monaco',
-'Inconsolata',
-'Fira Mono',
-'Droid Sans Mono',
-'Source Code Pro',
-monospace;
+$font-family: -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
+$font-family-code: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
 
 $font-weight-light: 300;
 $font-weight-normal: 400;
@@ -38,5 +27,4 @@ $font-weight-bold: 600;
 
 /* Border */
 $border-dotted: 2px dashed $color-dark-grey;
-
 $border-radius: 8px;

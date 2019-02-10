@@ -1,0 +1,12 @@
+.line {
+  margin: 10px 0 15px;
+  border-width: 2px;
+  font-weight: lighter;
+  border-image: linear-gradient(to right, rgba(0, 0, 0, 0),
+    #f3e48e,
+    #868686,
+    rgba(0, 0, 0, 0)) 100% 1;
+  border-style: solid;
+  border-top: none;
+  min-height: 1px;
+}

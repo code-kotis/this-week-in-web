@@ -1,10 +1,11 @@
 .issue {
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
   background-color: $color-white;
   padding: 20px 40px;
   border-radius: 4px;
   box-shadow: 0 0 25px $color-very-light-grey;
+  counter-reset: newsletter-link;
 
   &__item {
     padding: 20px 0;
@@ -16,14 +17,14 @@
   }
 
   &__preview-back {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   &__preview-info {
     height: 90px;
     display: flex;
     flex-direction: column;
-    padding: 10px 0;
+    padding: 15px 0;
     align-items: center;
 
     h2 {
@@ -33,6 +34,7 @@
     time {
       color: $color-black;
       font-size: 13px;
+      font-weight: $font-weight-semi-bold;
     }
 
     &--small {
@@ -41,16 +43,37 @@
   }
 
   &__content {
-    height: 100px;
+    min-height: 100px;
     padding: 16px 0 20px;
-    margin-bottom: 30px;
 
-    &>a {
+    & > a {
       text-decoration: none;
       border-bottom: none;
       padding-bottom: 5px;
       display: inline-block;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+      margin-left: 30px;
+      position: relative;
+    }
+
+    & > a::before {
+      display: inline-block;
+      position: absolute;
+      left: -30px;
+      background-color: violet;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      line-height: 20px;
+      text-align: center;
+      background-color: $color-dark-violet;
+      color: $color-white;
+      font-size: 13px;
+      font-weight: $font-weight-bold;
+      margin-top: 1px;
+      padding-left: 1px;
+      counter-increment: newsletter-link;
+      content: counter(newsletter-link);
     }
   }
 
@@ -58,27 +81,11 @@
     display: flex;
     align-items: center;
     color: $color-violet;
-  }
-
-  &__count {
-    display: inline-block;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    background-color: $color-dark-violet;
-    color: $color-white;
-    text-align: center;
-    font-size: 13px;
-    margin-right: 10px;
-    position: relative;
-    top: -2px;
-    font-weight: $font-weight-bold;
+    font-size: 130%;
   }
 
   &__content-desc {
     margin-bottom: 15px;
-    margin-left: 32px;
 
     code {
       display: inline-block;
@@ -95,10 +102,9 @@
   &__content-info {
     display: flex;
     justify-content: space-between;
-    margin-left: 32px;
 
     a {
-      color: $color-light-violet;
+      color: $color-light-rose;
       font-style: italic;
       font-weight: 300;
       border: none;
@@ -106,20 +112,34 @@
 
     span {
       color: $color-black;
-      // font-style: italic;
     }
   }
 }
 
-.line {
-  margin: 10px 0;
-  border-width: 2px;
-  font-weight: lighter;
-  border-image: linear-gradient(to right, rgba(0, 0, 0, 0),
-    #f3e48e,
-    #868686,
-    rgba(0, 0, 0, 0)) 100% 1;
-  border-style: solid;
-  border-top: none;
-  min-height: 1px;
+@media all and (min-width: 481px) and (max-width: 1280px) {
+  .issue {
+    max-width: 768px;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .issue {
+    width: 98%;
+    padding: 15px;
+
+    &__content {
+      & > a::before {
+        margin-top: -1px;
+      }
+    }
+
+    &__content-title {
+      font-size: 15px;
+    }
+
+    &__preview-back {
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+  }
 }

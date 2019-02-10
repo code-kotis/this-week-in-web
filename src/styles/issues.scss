@@ -1,70 +1,87 @@
 .issues {
-  margin: 30px 0;
   width: 90%;
+  min-height: 500px;
+  margin: 20px auto 0;
+  background-color: $color-white;
+  padding: 20px 15px;
+  border-radius: 4px;
+  box-shadow: 0 0 25px $color-very-light-grey;
 
   h2 {
+    text-align: center;
+  }
+
+  &__item {
+    display: flex;
+    min-height: 90px;
+    margin-bottom: 10px;
+    padding-bottom: 0;
+  }
+
+  &__item:not(:last-child) {
+    border-bottom: 1px solid $color-very-light-grey;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    width: 120px;
+    height: 70px;
+  }
+
+  &__title {
+    width: 100%;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 22px;
+    border-bottom: 0;
+    padding-bottom: 20px;
+    font-weight: $font-weight-semi-bold;
+
+    &:hover {
+      color: $color-violet;
+    }
+  }
+
+  &__no {
+    background-color: $color-dark-bg-primary;
+    border-radius: 3px;
+    text-align: center;
+    height: 20px;
+    font-size: 13px;
+    line-height: 20px;
+    width: 70px;
+    font-weight: $font-weight-bold;
     text-transform: uppercase;
+  }
+
+  &__date {
+    font-size: 13px;
+    color: $color-black;
+    margin-top: 10px;
+    font-style: italic;
   }
 }
 
-// .issue {
-//   height: 90px;
-//   margin-bottom: 20px;
-//   border-bottom: $border-dotted;
-//   display: flex;
+@media all and (min-width: 481px) and (max-width: 1280px) {
+  .issues {
+    max-width: 768px;
+  }
+}
 
-//   &__info {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-around;
-//     padding: 10px;
-//     width: 120px;
-//   }
+@media all and (max-width: 480px) {
+  .issues {
+    width: 100%;
+    margin: 0;
+  }
 
-//   &__title {
-//     width: 100%;
-//     padding: 10px;
-//     text-decoration: none;
-//     font-size: 22px;
-//   }
-
-//   &__no {
-//     background-color: $color-dark-bg-primary;
-//     border-radius: 3px;
-//     text-align: center;
-//     height: 20px;
-//     font-size: 13px;
-//     line-height: 20px;
-//     width: 70px;
-//     font-weight: $font-weight-bold;
-//     text-transform: uppercase;
-//   }
-
-//   &__date {
-//     font-size: 13px;
-//     color: $color-black;
-//   }
-// }
-
-.issue__preview {
-  .issue {
-    display: flex;
+  .issues__item {
     flex-direction: column;
   }
 
-  .issue h2 {
-    margin-bottom: 8px;
-  }
-
-  .issue__back {
-    margin-bottom: 20px;
-    display: inline-block;
-    text-decoration: none;
-    font-size: 15px;
-  }
-
-  .issue__content {
-    min-height: 500px;
-    background-color: $color-white;
+  .issues__title {
+    font-size: 20px;
   }
 }
