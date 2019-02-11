@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `this week in web`,
+    title: `This Week In Web`,
     description: `Get weekly coverage about what's happening in web community. No spams.`,
-    author: `@code-kotis`,
+    author: `Code Kotis`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

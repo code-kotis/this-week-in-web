@@ -22,10 +22,7 @@ export default function Template({ data }) {
             <time>{frontmatter.date}</time>
           </div>
           <div className="line" />
-          <div
-            className="issue__preview-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          <div className="issue__preview-content" dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </ContentRight>
     </Layout>

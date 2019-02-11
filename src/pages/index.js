@@ -11,15 +11,14 @@ import ContentRight from '../components/contentRight'
 export default class IndexPage extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const siteDescription = get(
-      this,
-      'props.data.site.siteMetadata.description'
-    )
+    const siteDescription = get(this, 'props.data.site.siteMetadata.description')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
+
+    console.log('siteTitle --->', siteTitle) // eslint-disable-line
 
     return (
       <Layout>
-        <SEO title={siteTitle} keywords={[siteDescription]} />
+        <SEO title={`${siteDescription}`} keywords={[siteDescription]} />
         <ContentLeft siteTitle={siteTitle} />
         <ContentRight>
           <div className="issues">
@@ -37,14 +36,9 @@ export default class IndexPage extends React.Component {
                   <div className="issues__item" key={title}>
                     <div className="issues__info">
                       <h3 className="issues_no">Issue: {index + 1}</h3>
-                      <time className="issues__date">
-                        {node.frontmatter.date}
-                      </time>
+                      <time className="issues__date">{node.frontmatter.date}</time>
                     </div>
-                    <Link
-                      to={`issues${node.fields.slug}`}
-                      className="issues__title"
-                    >
+                    <Link to={`issues${node.fields.slug}`} className="issues__title">
                       {contentTitle}
                     </Link>
                   </div>
