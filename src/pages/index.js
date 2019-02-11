@@ -11,37 +11,41 @@ import ContentRight from '../components/contentRight'
 export default class IndexPage extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const siteDescription = get(
+      this,
+      'props.data.site.siteMetadata.description'
+    )
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
       <Layout>
-        <SEO
-          title={siteTitle}
-          keywords={[`this-week-in-web`, `this week in web`, `weekly web`]}
-        />
-        <ContentLeft siteTitle="this week in web" />
+        <SEO title={siteTitle} keywords={[siteDescription]} />
+        <ContentLeft siteTitle={siteTitle} />
         <ContentRight>
-          <div className="issue">
-            <div className="issue__preview-info issue__preview-info--small">
-              <h2 className="title">{'All Issues'}</h2>
+          <div className="issues">
+            <div className="issues__preview-info issue__preview-info--small">
+              <h2 className="title">All Issues</h2>
             </div>
-            <h2 className="line" />
-            <div className="issue__preview-content">
+            <div className="line" />
+            <div className="issues__preview-content">
               {posts.map(({ node }, index) => {
                 const title = get(node, 'frontmatter.title') || node.fields.slug
+                const published = get(node, 'frontmatter.published')
+                const contentTitle = get(node, 'frontmatter.contentTitle')
+                if (!published) return null
                 return (
-                  <div className="issue__item" key={title}>
-                    <div className="issue__info">
-                      <span className="issue__no">Issue: {index + 1}</span>
-                      <time className="issue__date">
+                  <div className="issues__item" key={title}>
+                    <div className="issues__info">
+                      <h3 className="issues_no">Issue: {index + 1}</h3>
+                      <time className="issues__date">
                         {node.frontmatter.date}
                       </time>
                     </div>
                     <Link
                       to={`issues${node.fields.slug}`}
-                      className="issue__title"
+                      className="issues__title"
                     >
-                      {title}
+                      {contentTitle}
                     </Link>
                   </div>
                 )
@@ -59,18 +63,21 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 200)
           fields {
             slug
           }
           frontmatter {
             date(formatString: "DD MMM, YYYY")
             title
+            published
+            contentTitle
           }
         }
       }

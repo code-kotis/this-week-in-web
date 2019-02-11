@@ -21,7 +21,7 @@ export default function Template({ data }) {
             <h2 className="title">{frontmatter.title}</h2>
             <time>{frontmatter.date}</time>
           </div>
-          <h2 className="line" />
+          <div className="line" />
           <div
             className="issue__preview-content"
             dangerouslySetInnerHTML={{ __html: html }}
