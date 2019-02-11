@@ -13,9 +13,6 @@ export default class IndexPage extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const siteDescription = get(this, 'props.data.site.siteMetadata.description')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
-
-    console.log('siteTitle --->', siteTitle) // eslint-disable-line
-
     return (
       <Layout>
         <SEO title={`${siteDescription}`} keywords={[siteDescription]} />
