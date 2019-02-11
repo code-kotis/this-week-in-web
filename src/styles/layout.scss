@@ -14,7 +14,7 @@ html, body {
 }
 
 body {
-  background-color: $color-light-grey;
+  background-color: $color-white;
   color: $color-black;
   font-family: $font-family;
   font-weight: $font-weight-normal;
@@ -65,8 +65,8 @@ h3 {
   }
 
   &__right {
-    background-color: $color-light-grey;
-    padding: 30px 60px;
+    background-color: $color-white;
+    padding: 20px 25px;
   }
 }
 
