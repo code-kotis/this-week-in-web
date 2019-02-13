@@ -1,0 +1,24 @@
+{
+	"name": "generate-newsletter",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Generate newsletter template via google sheets API",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"bin": {
+		"generate-newsletter": "cli.js"
+	},
+	"repository": "https://github.com/gokulkrishh/generate-newsletter",
+	"author": "Gokulakrishnan Kalaikovan <krishnangokul9@gmail.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"dotenv": "^6.2.0",
+		"html-creator": "https://github.com/gokulkrishh/html-creator.git",
+		"spreadsheet-to-json": "^1.3.1"
+	},
+	"dependencies": {
+		"enquirer": "^2.3.0"
+	}
+}

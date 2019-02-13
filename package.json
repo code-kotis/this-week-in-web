@@ -29,6 +29,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
+    "generate": "generate-newsletter",
     "format": "prettier --write \"src/**/*.js\"",
     "pre-commit": "lint-staged",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
@@ -50,5 +51,6 @@
   },
   "bugs": {
     "url": "https://github.com/code-kotis/this-week-in-web/issues"
-  }
+  },
+  "workspaces": ["packages/*"]
 }
