@@ -1,13 +1,11 @@
 const fs = require('fs-extra')
 const path = require('path')
-const htmlCreator = require('html-creator')
 const { prompt } = require('enquirer')
 const { extractSheets } = require('spreadsheet-to-json')
 const argv = require('yargs').argv
 
-const { getRandomColor, colorLuminance, getCurrentDate } = require('./utils')
-const credentials = require('./credentials.json')
-
+const { getCurrentDate } = require('./utils')
+const credentials = fs.pathExistsSync(path.resolve(__dirname, 'credentials.json')) ? require('./credentials.json') : {}
 require('dotenv').load() // Load .env and put it into process.env
 
 const spreadsheetKey = process.env.SHEET_URL
@@ -74,10 +72,10 @@ askQuestions().then(userResponse => {
     // @TODO: update the content title
     const markdown = `---
 path: "/issues/${currentYear}/${month}/${issueNo}"
-published: true
+published: false
 date: "${userResponse.date}"
 title: "Issue #${issueNo}"
-contentTitle: Run <code>copy(obj)</code> in the Chrome Dev Tools console to copy an object to your clipboard.
+contentTitle: "----"
 ---		
 ${html}
 		`
