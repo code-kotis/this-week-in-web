@@ -1,14 +1,17 @@
-const fs = require('fs')
+const fs = require('fs-extra')
+const path = require('path')
 const htmlCreator = require('html-creator')
 const { prompt } = require('enquirer')
 const { extractSheets } = require('spreadsheet-to-json')
+const argv = require('yargs').argv
 
-const { getRandomColor, colorLuminance } = require('./utils')
+const { getRandomColor, colorLuminance, getCurrentDate } = require('./utils')
 const credentials = require('./credentials.json')
 
 require('dotenv').load() // Load .env and put it into process.env
 
 const spreadsheetKey = process.env.SHEET_URL
+const outDir = argv.out || '.'
 
 const askQuestions = async () => {
   const userResponse = await prompt([
@@ -30,6 +33,7 @@ const askQuestions = async () => {
       type: 'input',
       name: 'date',
       message: 'Date ?',
+      initial: getCurrentDate(),
     },
   ])
 
@@ -44,9 +48,8 @@ askQuestions().then(userResponse => {
       console.log('ERROR: ', err)
       return
     }
-    console.log(data)
     let linksCollection = Object.values(data)[0].map(item => {
-			return `
+      return `
 				<tr>
 					<td>
 						<div class="issue__content">
@@ -59,17 +62,37 @@ askQuestions().then(userResponse => {
     })
     let links = linksCollection.join('')
     const html = `
-			<center>
-				<table align="center" border="0" cellspacing="0" width="100%" height="100%" cellpadding="0">
-				<tbody>${links}</tbody>
-				</table>
-			</center>	
+<center>
+	<table align="center" border="0" cellspacing="0" width="100%" height="100%" cellpadding="0">
+	<tbody>${links}</tbody>
+	</table>
+</center>	
 		`
-    const markdown = ``
+    const currentYear = userResponse.date.split('-').shift()
+    const month = userResponse.month.substring(0, 3).toLowerCase()
+    const issueNo = userResponse.issue
+    // @TODO: update the content title
+    const markdown = `---
+path: "/issues/${currentYear}/${month}/${issueNo}"
+published: true
+date: "${userResponse.date}"
+title: "Issue #${issueNo}"
+contentTitle: Run <code>copy(obj)</code> in the Chrome Dev Tools console to copy an object to your clipboard.
+---		
+${html}
+		`
 
-    fs.writeFile('./template.html', html, (err, done) => {
+    const templateFile = path.resolve(outDir, currentYear, month, `${issueNo}.html`)
+    const markdownFile = path.resolve(outDir, currentYear, month, `${issueNo}.md`)
+
+    fs.outputFile(templateFile, html, (err, done) => {
       if (err) console.log('Not able to generate template')
-      else console.log(' Done 😬 \n')
+      else console.log('✅ Generated template file \n')
+    })
+
+    fs.outputFile(markdownFile, markdown, (err, done) => {
+      if (err) console.log('Not able to generate markdown')
+      else console.log('✅ Generated markdown file \n')
     })
   })
 })

@@ -30,8 +30,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "start": "npm run develop",
-    "generate": "generate-newsletter",
+    "start": "yarn develop",
+    "generate": "generate-newsletter --out=./src/pages/issues",
     "format": "prettier --write \"src/**/*.js\"",
     "pre-commit": "lint-staged",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""

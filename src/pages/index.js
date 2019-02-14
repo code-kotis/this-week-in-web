@@ -32,7 +32,7 @@ export default class IndexPage extends React.Component {
                 return (
                   <div className="issues__item" key={title}>
                     <div className="issues__info">
-                      <h3 className="issues_no">Issue: {index + 1}</h3>
+                      <h3 className="issues_no">{title.replace('#', '')}</h3>
                       <time className="issues__date">{node.frontmatter.date}</time>
                     </div>
                     <Link to={`issues${node.fields.slug}`} className="issues__title">
