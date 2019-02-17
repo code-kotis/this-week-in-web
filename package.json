@@ -19,16 +19,19 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "generate-newsletter": "1.0.0"
   },
   "keywords": [
-    "gatsby"
+    "this-week-in-web",
+    "newsletter"
   ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "start": "npm run develop",
+    "start": "yarn develop",
+    "generate": "generate-newsletter --out=./src/pages/issues",
     "format": "prettier --write \"src/**/*.js\"",
     "pre-commit": "lint-staged",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
@@ -50,5 +53,6 @@
   },
   "bugs": {
     "url": "https://github.com/code-kotis/this-week-in-web/issues"
-  }
+  },
+  "workspaces": ["packages/*"]
 }
