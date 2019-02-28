@@ -26,11 +26,18 @@ module.exports = {
         start_url: `/`,
         background_color: `#FAFAFA`,
         theme_color: `#f3e48e`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        display: `standalone`,
+        icon: `src/images/android-chrome-512x512.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-135388648-1`,
+      },
+    },
+    `gatsby-plugin-no-sourcemaps`,
   ],
 }
