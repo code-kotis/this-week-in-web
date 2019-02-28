@@ -9,7 +9,11 @@ const Newsletter = () => {
           <Link to="/">this week in web</Link>
         </h1>
         <h3>subscribe to weekly newsletter</h3>
-        <form action="" method="post" target="_blank">
+        <form
+          action="//tips.us15.list-manage.com/subscribe/post?u=05ad32d0bc2eec161ad0f998b&amp;id=1b19be63b3"
+          method="post"
+          target="_blank"
+        >
           <input className="email-address" name="EMAIL" type="email" id="mce-EMAIL" placeholder="Your Email Address" required />
           <div style={{ position: 'absolute', left: '-5000px' }}>
             <input type="text" name="b_05ad32d0bc2eec161ad0f998b_1b19be63b3" tabIndex="-1" />

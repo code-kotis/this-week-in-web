@@ -1,4 +1,5 @@
 const fs = require('fs-extra')
+const url = require('url')
 const path = require('path')
 const { prompt } = require('enquirer')
 const { extractSheets } = require('spreadsheet-to-json')
@@ -10,6 +11,7 @@ require('dotenv').load() // Load .env and put it into process.env
 
 const spreadsheetKey = process.env.SHEET_URL
 const outDir = argv.out || '.'
+const initialDate = getCurrentDate()
 
 const askQuestions = async () => {
   const userResponse = await prompt([
@@ -31,7 +33,7 @@ const askQuestions = async () => {
       type: 'input',
       name: 'date',
       message: 'Date ?',
-      initial: getCurrentDate(),
+      initial: initialDate,
     },
   ])
 
@@ -46,14 +48,24 @@ askQuestions().then(userResponse => {
       console.log('ERROR: ', err)
       return
     }
-    let linksCollection = Object.values(data)[0].map(item => {
+
+    const updatedData = Object.values(data)[0].map(item => {
+      return {
+        ...item,
+        HOSTNAME: url.parse(item.LINK).hostname,
+      }
+    })
+
+    let linksCollection = updatedData.map(item => {
       return `
 				<tr>
 					<td>
 						<div class="issue__content">
 							<a href="${item.LINK}"><h3 class="issue__content-title">${item.TITLE}</h3></a>
 							<p class="issue__content-desc">${item.DESCRIPTION}</p>
-							<div class="issue__content-info"><a href="${item.LINK}">${item.LINK}</a> <span>${item.AUTHOR}</span></div>
+							<div class="issue__content-info"><a href="${item.LINK}" target="_blank" rel="noopener noreferrer">${item.HOSTNAME}</a> <span>${
+        item.AUTHOR
+      }</span></div>
 						</div>
 					</td>
 				</tr>`
@@ -64,7 +76,7 @@ askQuestions().then(userResponse => {
 	<table align="center" border="0" cellspacing="0" width="100%" height="100%" cellpadding="0">
 	<tbody>${links}</tbody>
 	</table>
-</center>	
+</center>
 		`
     const currentYear = userResponse.date.split('-').shift()
     const month = userResponse.month.substring(0, 3).toLowerCase()
@@ -76,7 +88,7 @@ published: false
 date: "${userResponse.date}"
 title: "Issue #${issueNo}"
 contentTitle: "----"
----		
+---
 ${html}
 		`
 
