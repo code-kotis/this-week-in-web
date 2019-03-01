@@ -1,2 +1,2 @@
 # Redirect default Netlify subdomain to primary domain
-http://this-week-in-web.netlify.com/* http://www.this-week-in-web.com/:splat 301!
+http://this-week-in-web.netlify.com/* http://this-week-in-web.com/:splat 301!
