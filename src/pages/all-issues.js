@@ -64,7 +64,7 @@ export default class IndexPage extends React.Component {
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query AllIssuesQuery {
     site {
       siteMetadata {
         title
