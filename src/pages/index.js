@@ -10,14 +10,20 @@ import SEO from '../components/seo'
 import ContentLeft from '../components/contentLeft'
 import ContentRight from '../components/contentRight'
 
+const getGroupedPosts = posts => {
+  posts = posts.filter(p => 
+    get(p, 'node.frontmatter.published')
+  )
+  return groupBy(posts, p => {
+    return new Date(get(p, 'node.frontmatter.date')).getMonth()
+  })
+}
 export default class IndexPage extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const siteDescription = get(this, 'props.data.site.siteMetadata.description')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
-    const groupedPosts = groupBy(posts, p => {
-      return new Date(get(p, 'node.frontmatter.date')).getMonth()
-    })
+    const groupedPosts = getGroupedPosts(posts);
     return (
       <Layout>
         <SEO title={`${siteDescription}`} keywords={[siteDescription]} />
@@ -35,7 +41,9 @@ export default class IndexPage extends React.Component {
                 let monthPosts = groupedPosts[month]
                 return (
                   <div key={monthName} className="issues__preview-content">
-                    <div className="issues__month">{monthName}</div>
+                    {monthPosts.length > 0 && 
+                        <div className="issues__month">{monthName}</div>
+                    }
                     {monthPosts.map(({ node }, index) => {
                       const title = get(node, 'frontmatter.title', node.fields.slug)
                       const published = get(node, 'frontmatter.published')
