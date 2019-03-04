@@ -9,6 +9,14 @@
     text-align: center;
   }
 
+  &__month {
+    color: #EC407A;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    font-size: 17px;
+  }
+
   &__item {
     display: flex;
     min-height: 90px;
@@ -16,7 +24,7 @@
     padding-bottom: 0;
   }
 
-  &__item:not(:last-child) {
+  &__preview-content:not(:last-child) {
     border-bottom: 1px solid $color-very-light-grey;
   }
 
@@ -35,8 +43,9 @@
     text-decoration: none;
     font-size: 22px;
     border-bottom: 0;
-    padding-bottom: 20px;
     font-weight: $font-weight-semi-bold;
+    display: flex;
+    align-items: center;
 
     &:hover {
       color: $color-violet;
@@ -81,5 +90,20 @@
 
   .issues__title {
     font-size: 20px;
+    display: block;
+  }
+
+  .issues__info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: auto;
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .issues__date {
+    margin: 0;
   }
 }
