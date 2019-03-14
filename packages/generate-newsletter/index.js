@@ -43,12 +43,13 @@ const askQuestions = async () => {
 askQuestions().then(userResponse => {
   console.log('\n Generating pls wait... \n ')
 
-  extractSheets({ spreadsheetKey, credentials }, (err, data) => {
+  extractSheets({ spreadsheetKey, credentials, sheetsToExtract: ['latest'] }, (err, data) => {
     if (err) {
       console.log('ERROR: ', err)
       return
     }
 
+    console.log('\n Received content :  \n ', JSON.stringify(data))
     const updatedData = Object.values(data)[0].map(item => {
       return {
         ...item,
@@ -56,12 +57,15 @@ askQuestions().then(userResponse => {
       }
     })
 
-    let linksCollection = updatedData.map(item => {
+    let linksCollection = updatedData.map((item, index) => {
       return `
 				<tr>
 					<td>
-						<div class="issue__content">
-							<a href="${item.LINK}"><h3 class="issue__content-title">${item.TITLE}</h3></a>
+            <div class="issue__content">
+              <a href="${item.LINK}">
+                <span class="issue__counter">${index+1}</span>
+                <span class="issue__content-title">${item.TITLE}</span>
+              </a>
 							<p class="issue__content-desc">${item.DESCRIPTION}</p>
 							<div class="issue__content-info"><a href="${item.LINK}" target="_blank" rel="noopener noreferrer">${item.HOSTNAME}</a> <span>${
         item.AUTHOR
@@ -71,16 +75,214 @@ askQuestions().then(userResponse => {
 				</tr>`
     })
     let links = linksCollection.join('')
-    const html = `
+
+    const currentYear = userResponse.date.split('-').shift()
+    const currentDate = userResponse.date.split('-').pop()
+    const month = userResponse.month.substring(0, 3).toLowerCase()
+    const issueNo = userResponse.issue
+
+    const content = `
 <center>
 	<table align="center" border="0" cellspacing="0" width="100%" height="100%" cellpadding="0">
 	<tbody>${links}</tbody>
 	</table>
 </center>
+    `
+    const html = `
+    <html>
+    <head>
+    <style>
+		* {
+      margin: 0;
+      padding: 0
+    }
+    
+    *,
+    :after,
+    :before {
+      box-sizing: border-box
+    }
+    
+    body,
+    html {
+      height: 100%
+    }
+
+  .nws__title {
+    padding-bottom: 20px;
+    max-width: 600px;
+    margin: auto;
+    word-spacing: 5px;
+  }
+    
+    #twiw__body {
+      background-color: #f3e48e;
+      font-family: -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      -webkit-tap-highlight-color: transparent;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      padding: 20px;
+      margin: auto;
+    }
+    
+    #twiw__body a,
+    #twiw__body {
+      color: #424242
+    }
+    
+    #twiw__body a {
+      text-decoration: none;
+      border-bottom: 1px solid;
+      padding-bottom: 3px
+    }
+    
+    #twiw__body a:hover {
+      opacity: .85
+    }
+    
+    #twiw__body li,
+    #twiw__body ul {
+      list-style-type: none;
+    }
+    
+    #twiw__body a,
+    #twiw__body h1,
+    #twiw__body h2,
+    #twiw__body h3 {
+      font-weight: 600
+    }
+    
+    #twiw__body h1 {
+      font-size: 40px
+    }
+    
+    #twiw__body h2 {
+      font-size: 26px
+    }
+    
+    #twiw__body h3 {
+      font-size: 21px
+    }
+    
+    #twiw__body .issue {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px 40px;
+      box-shadow: 0 0 5px #ccc;
+    }
+    
+    #twiw__body .issue__preview-info {
+      height: 90px;
+      display: block;
+      padding: 15px 0;
+			color: #333;
+			text-align: center;
+    }
+    
+    #twiw__body .issue__preview-info h2 {
+      margin-bottom: 10px
+    }
+    
+    #twiw__body .issue__preview-info time {
+      color: #424242;
+      font-size: 13px;
+      font-weight: 500
+    }
+    
+    #twiw__body .issue__content {
+      min-height: 100px;
+      padding: 16px 0 20px;
+      word-break: break-word;
+    }
+    
+    #twiw__body .issue__content>a {
+      text-decoration: none;
+      border-bottom: none;
+      padding-bottom: 5px;
+      display: inline-block;
+      margin-bottom: 10px;
+      margin-left: 30px;
+      position: relative
+    }
+    
+    #twiw__body .issue__counter {
+      display: inline-block;
+      position: absolute;
+      left: -30px;
+      background-color: violet;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      line-height: 20px;
+      text-align: center;
+      background-color: #3f51b5;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 4px;
+      padding-left: 1px;
+    }
+    
+    #twiw__body .issue__content-title {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: center;
+      align-items: center;
+      color: #4054c2;
+      font-size: 130%
+    }
+    
+    #twiw__body .issue__content-desc {
+      margin-bottom: 15px;
+      line-height: 25px;
+      color: #000
+    }
+    
+    #twiw__body .issue__content-info {
+      display: block;
+    }
+    
+    #twiw__body .issue__content-info a {
+      color: #ec407a;
+      font-style: italic;
+      font-weight: 300;
+      border: none;
+    }
+    
+    #twiw__body .issue__content-info span {
+      float: right;
+      color: #424242;
+    }
+    
+    #twiw__body .line {
+      margin: 10px 0 15px;
+      border-width: 2px;
+      font-weight: lighter;
+      -o-border-image: linear-gradient(90deg, transparent, #f3e48e, #868686, transparent) 100% 1;
+      border-image: linear-gradient(90deg, transparent, #f3e48e, #868686, transparent) 100% 1;
+      border-style: solid;
+      border-top: none;
+      min-height: 1px;
+    }
+    </style>
+</head>
+<body>
+<div id="twiw__body">
+<h1 class="nws__title">This Week In Web</h1>
+<div class="issue"><div class="issue__preview-info"><h2 class="title">Issue #${issueNo}</h2><time>${
+      userResponse.month
+    } ${currentDate}, ${currentYear}</time></div><div class="line"></div><div class="issue__preview-content">
+${content}
+</div>
+</div>
+</div>
+</body>
+</html>
 		`
-    const currentYear = userResponse.date.split('-').shift()
-    const month = userResponse.month.substring(0, 3).toLowerCase()
-    const issueNo = userResponse.issue
+
     // @TODO: update the content title
     const markdown = `---
 path: "/issues/${currentYear}/${month}/${issueNo}"
@@ -89,7 +291,7 @@ date: "${userResponse.date}"
 title: "Issue #${issueNo}"
 contentTitle: "----"
 ---
-${html}
+${content}
 		`
 
     const templateFile = path.resolve(outDir, currentYear, month, `${issueNo}.html`)
@@ -97,12 +299,12 @@ ${html}
 
     fs.outputFile(templateFile, html, (err, done) => {
       if (err) console.log('Not able to generate template')
-      else console.log('✅ Generated template file \n')
+      else console.log('\n 🌱 Generated template file \n')
     })
 
     fs.outputFile(markdownFile, markdown, (err, done) => {
       if (err) console.log('Not able to generate markdown')
-      else console.log('✅ Generated markdown file \n')
+      else console.log(' 🌱  Generated markdown file \n')
     })
   })
 })

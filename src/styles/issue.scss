@@ -3,7 +3,6 @@
   margin: 0 auto;
   background-color: $color-white;
   padding: 20px 40px;
-  counter-reset: newsletter-link;
 
   &__item {
     padding: 20px 0;
@@ -40,9 +39,28 @@
     }
   }
 
+  &__counter {
+    display: inline-block;
+    position: absolute;
+    left: -30px;
+    background-color: violet;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    line-height: 20px;
+    text-align: center;
+    background-color: $color-dark-violet;
+    color: $color-white;
+    font-size: 13px;
+    font-weight: $font-weight-bold;
+    margin-top: 2px;
+    padding-left: 1px;
+  }
+
   &__content {
     min-height: 100px;
     padding: 16px 0 20px;
+    word-break: break-word;
 
     & > a {
       text-decoration: none;
@@ -52,26 +70,6 @@
       margin-bottom: 10px;
       margin-left: 30px;
       position: relative;
-    }
-
-    & > a::before {
-      display: inline-block;
-      position: absolute;
-      left: -30px;
-      background-color: violet;
-      height: 20px;
-      width: 20px;
-      border-radius: 50%;
-      line-height: 20px;
-      text-align: center;
-      background-color: $color-dark-violet;
-      color: $color-white;
-      font-size: 13px;
-      font-weight: $font-weight-bold;
-      margin-top: 1px;
-      padding-left: 1px;
-      counter-increment: newsletter-link;
-      content: counter(newsletter-link);
     }
   }
 
