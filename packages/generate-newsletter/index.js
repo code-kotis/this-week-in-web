@@ -62,8 +62,8 @@ askQuestions().then(userResponse => {
 				<tr>
 					<td>
             <div class="issue__content">
-              <a href="${item.LINK}">
-                <span class="issue__counter">${index+1}</span>
+              <a href="${item.LINK}" target="_blank" rel="noopener noreferrer">
+                <span class="issue__counter">${index + 1}</span>
                 <span class="issue__content-title">${item.TITLE}</span>
               </a>
 							<p class="issue__content-desc">${item.DESCRIPTION}</p>
@@ -81,43 +81,42 @@ askQuestions().then(userResponse => {
     const month = userResponse.month.substring(0, 3).toLowerCase()
     const issueNo = userResponse.issue
 
-    const content = `
-<center>
-	<table align="center" border="0" cellspacing="0" width="100%" height="100%" cellpadding="0">
-	<tbody>${links}</tbody>
-	</table>
-</center>
-    `
-    const html = `
+    const htmlContent = `
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
     <html>
     <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>*|MC:SUBJECT|*</title>
     <style>
-		* {
+    * {
       margin: 0;
-      padding: 0
+      padding: 0;
     }
-    
+
     *,
     :after,
     :before {
-      box-sizing: border-box
-    }
-    
-    body,
-    html {
-      height: 100%
+      box-sizing: border-box;
     }
 
-  .nws__title {
-    padding-bottom: 20px;
-    max-width: 600px;
-    margin: auto;
-    word-spacing: 5px;
-  }
-    
+    body,
+    html {
+      height: 100%;
+    }
+
+    .nws__title {
+      padding-bottom: 20px;
+      max-width: 720px;
+      margin: auto;
+      word-spacing: 5px;
+    }
+
     #twiw__body {
       background-color: #f3e48e;
-      font-family: -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
+      font-family: trebuchet ms, lucida grande, lucida sans unicode, lucida sans, tahoma, sans-serif;
       font-weight: 400;
       font-size: 14px;
       -webkit-tap-highlight-color: transparent;
@@ -126,137 +125,134 @@ askQuestions().then(userResponse => {
       padding: 20px;
       margin: auto;
     }
-    
+
     #twiw__body a,
     #twiw__body {
-      color: #424242
+      color: #424242;
     }
-    
+
     #twiw__body a {
       text-decoration: none;
       border-bottom: 1px solid;
-      padding-bottom: 3px
+      padding-bottom: 3px;
     }
-    
+
     #twiw__body a:hover {
-      opacity: .85
+      opacity: 0.85;
     }
-    
+
     #twiw__body li,
     #twiw__body ul {
       list-style-type: none;
     }
-    
+
     #twiw__body a,
     #twiw__body h1,
     #twiw__body h2,
     #twiw__body h3 {
-      font-weight: 600
+      font-weight: 600;
     }
-    
+
     #twiw__body h1 {
-      font-size: 40px
+      font-size: 40px;
     }
-    
+
     #twiw__body h2 {
-      font-size: 26px
+      font-size: 26px;
     }
-    
+
     #twiw__body h3 {
-      font-size: 21px
+      font-size: 21px;
     }
-    
+
     #twiw__body .issue {
-      max-width: 600px;
+      max-width: 720px;
       margin: 0 auto;
       background-color: #fff;
       padding: 20px 40px;
       box-shadow: 0 0 5px #ccc;
     }
-    
+
     #twiw__body .issue__preview-info {
       height: 90px;
       display: block;
       padding: 15px 0;
-			color: #333;
-			text-align: center;
+      color: #333;
+      text-align: center;
     }
-    
+
     #twiw__body .issue__preview-info h2 {
-      margin-bottom: 10px
+      margin-bottom: 10px;
     }
-    
+
     #twiw__body .issue__preview-info time {
       color: #424242;
       font-size: 13px;
-      font-weight: 500
+      font-weight: 500;
     }
-    
+
     #twiw__body .issue__content {
       min-height: 100px;
       padding: 16px 0 20px;
       word-break: break-word;
     }
-    
-    #twiw__body .issue__content>a {
+
+    #twiw__body .issue__content > a {
       text-decoration: none;
       border-bottom: none;
       padding-bottom: 5px;
-      display: inline-block;
+      display: flex;
       margin-bottom: 10px;
-      margin-left: 30px;
-      position: relative
     }
-    
+
     #twiw__body .issue__counter {
       display: inline-block;
-      position: absolute;
-      left: -30px;
       background-color: violet;
-      height: 20px;
-      width: 20px;
+      height: 18px;
+      width: 18px;
       border-radius: 50%;
       line-height: 20px;
       text-align: center;
       background-color: #3f51b5;
       color: #fff;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
-      margin-top: 4px;
+      margin-right: 10px;
+      margin-top: 5px;
       padding-left: 1px;
     }
-    
+
     #twiw__body .issue__content-title {
       display: -webkit-flex;
       display: flex;
       -webkit-align-items: center;
       align-items: center;
       color: #4054c2;
-      font-size: 130%
+      font-size: 16px;
     }
-    
+
     #twiw__body .issue__content-desc {
       margin-bottom: 15px;
       line-height: 25px;
-      color: #000
+      color: #000;
     }
-    
+
     #twiw__body .issue__content-info {
       display: block;
     }
-    
+
     #twiw__body .issue__content-info a {
       color: #ec407a;
       font-style: italic;
       font-weight: 300;
       border: none;
     }
-    
+
     #twiw__body .issue__content-info span {
       float: right;
       color: #424242;
     }
-    
+
     #twiw__body .line {
       margin: 10px 0 15px;
       border-width: 2px;
@@ -267,7 +263,38 @@ askQuestions().then(userResponse => {
       border-top: none;
       min-height: 1px;
     }
-    </style>
+
+    #twiw__body .issue__footer {
+      width: 720px;
+      margin: 10px auto 0;
+      text-align: center;
+    }
+
+    #twiw__body .issue__footer em {
+      display: block;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    #twiw__body .issue__footer p {
+      margin-bottom: 10px;
+    }
+
+    #twiw__body .issue__footer a {
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    @media and all and (min-width: 480px) {
+      .nws__title {
+        font-size: 26px;
+      }
+
+      .issue {
+        padding: 10px 5px;
+      }
+    }
+  </style>
 </head>
 <body>
 <div id="twiw__body">
@@ -275,9 +302,26 @@ askQuestions().then(userResponse => {
 <div class="issue"><div class="issue__preview-info"><h2 class="title">Issue #${issueNo}</h2><time>${
       userResponse.month
     } ${currentDate}, ${currentYear}</time></div><div class="line"></div><div class="issue__preview-content">
-${content}
+    <center>
+    <table align="center" border="0" cellspacing="0" width="100%" height="100%" cellpadding="0">
+    <tbody>
+      ${links}
+    </tbody>
+    </table>
+    </center>
 </div>
 </div>
+<div class="issue__footer" style="padding-top:10px;margin-bottom:40px;">
+    <div valign="top">
+      <em>Copyright © *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em>
+      <br>
+      <p>*|IFNOT:ARCHIVE_PAGE|* *|LIST:DESCRIPTION|*</p>
+      <p>Want to change how you receive these emails?</p>
+      You can <a href="*|UPDATE_PROFILE|*">update your preferences</a> or <a href="*|UNSUB|*">unsubscribe from this list</a>
+      <br>
+      <br>*|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*
+    </div>
+    </div>
 </div>
 </body>
 </html>
@@ -291,13 +335,17 @@ date: "${userResponse.date}"
 title: "Issue #${issueNo}"
 contentTitle: "----"
 ---
-${content}
-		`
+<center>
+	<table align="center" border="0" cellspacing="0" width="100%" height="100%" cellpadding="0">
+    <tbody>${links}</tbody>
+  </table>
+</center>
+`
 
     const templateFile = path.resolve(outDir, currentYear, month, `${issueNo}.html`)
     const markdownFile = path.resolve(outDir, currentYear, month, `${issueNo}.md`)
 
-    fs.outputFile(templateFile, html, (err, done) => {
+    fs.outputFile(templateFile, htmlContent, (err, done) => {
       if (err) console.log('Not able to generate template')
       else console.log('\n 🌱 Generated template file \n')
     })

@@ -41,20 +41,17 @@
 
   &__counter {
     display: inline-block;
-    position: absolute;
-    left: -30px;
     background-color: violet;
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     border-radius: 50%;
     line-height: 20px;
     text-align: center;
     background-color: $color-dark-violet;
     color: $color-white;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: $font-weight-bold;
-    margin-top: 2px;
-    padding-left: 1px;
+    margin-right: 10px;
   }
 
   &__content {
@@ -66,10 +63,9 @@
       text-decoration: none;
       border-bottom: none;
       padding-bottom: 5px;
-      display: inline-block;
+      display: flex;
+      align-items: center;
       margin-bottom: 10px;
-      margin-left: 30px;
-      position: relative;
     }
   }
 
@@ -77,7 +73,7 @@
     display: flex;
     align-items: center;
     color: $color-violet;
-    font-size: 130%;
+    font-size: 17px;
   }
 
   &__content-desc {
