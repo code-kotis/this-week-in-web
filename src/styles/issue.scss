@@ -52,6 +52,10 @@
     font-size: 12px;
     font-weight: $font-weight-bold;
     margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1px;
   }
 
   &__content {

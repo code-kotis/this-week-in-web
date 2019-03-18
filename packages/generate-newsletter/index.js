@@ -285,13 +285,59 @@ askQuestions().then(userResponse => {
       margin-top: 10px;
     }
 
-    @media and all and (min-width: 480px) {
-      .nws__title {
-        font-size: 26px;
+    @media all and (max-width: 480px) {
+      #twiw__body {
+        padding: 5px !important;
       }
 
-      .issue {
-        padding: 10px 5px;
+      #twiw__body .issue__footer {
+        width: 100% !important;
+      }
+
+      #twiw__body h1.nws__title {
+        font-size: 26px !important;
+        text-align: center;
+        margin-top: 10px !important;
+      }
+
+      #twiw__body .issue {
+        padding: 12px !important;
+      }
+
+      #twiw__body .issue__content-title {
+        font-size: 14px !important;
+      }
+
+      #twiw__body .issue__content-desc {
+        font-size: 13px !important;
+        word-break: break-all;
+      }
+
+      #twiw__body .issue__counter {
+        display: none !important;
+      }
+
+      #twiw__body .issue__footer img {
+        height: 40px;
+        width: 100px;
+      }
+
+      #twiw__body .issue__footer,
+      #twiw__body .issue__footer em,
+      #twiw__body .issue__footer p {
+        font-size: 11px;
+        width: 90%;
+        margin: 10px auto !important;
+        text-align: center;
+      }
+
+      #twiw__body .issue__footer em {
+        margin-top: 20px !important;
+      }
+
+      #twiw__body .issue__content-info a,
+      #twiw__body .issue__content-info span {
+        font-size: 12px;
       }
     }
   </style>
