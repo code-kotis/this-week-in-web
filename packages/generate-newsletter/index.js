@@ -305,11 +305,11 @@ askQuestions().then(userResponse => {
       }
 
       #twiw__body .issue__content-title {
-        font-size: 14px !important;
+        font-size: 15px !important;
       }
 
       #twiw__body .issue__content-desc {
-        font-size: 13px !important;
+        font-size: 14px !important;
         word-break: break-all;
       }
 

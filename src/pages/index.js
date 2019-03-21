@@ -52,7 +52,7 @@ export default class IndexPage extends React.Component {
                               <h3 className="issues_no">{title.replace('#', '')}</h3>
                               <time className="issues__date">{node.frontmatter.date}</time>
                             </div>
-                            {contentTitle}
+                            <p>{contentTitle}</p>
                           </Link>
                         </div>
                       )
