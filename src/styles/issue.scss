@@ -14,7 +14,7 @@
   }
 
   &__preview-back {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   &__preview-info {
@@ -37,25 +37,6 @@
     &--small {
       height: 50px;
     }
-  }
-
-  &__counter {
-    display: inline-block;
-    background-color: violet;
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    line-height: 20px;
-    text-align: center;
-    background-color: $color-dark-violet;
-    color: $color-white;
-    font-size: 12px;
-    font-weight: $font-weight-bold;
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 1px;
   }
 
   &__content {
@@ -132,7 +113,7 @@
     }
 
     &__content-title {
-      font-size: 15px;
+      font-size: 16px;
     }
 
     &__preview-back {

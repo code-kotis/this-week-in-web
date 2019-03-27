@@ -21,7 +21,7 @@ const Newsletter = () => {
           <input className="submit-btn" id="mc-embedded-subscribe" type="submit" value="Submit" />
         </form>
         <span className="newsletter__info">
-          Get weekly coverage about what's happening in <b>web community</b>. No spams.
+          Get weekly (Thursday) coverage about what's happening in <b>web community</b>. No spams.
         </span>
         <div className="newsletter__curators">
           <b>Curators </b> -

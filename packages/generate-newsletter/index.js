@@ -63,7 +63,6 @@ askQuestions().then(userResponse => {
 					<td>
             <div class="issue__content">
               <a href="${item.LINK}" target="_blank" rel="noopener noreferrer">
-                <span class="issue__counter">${index + 1}</span>
                 <span class="issue__content-title">${item.TITLE}</span>
               </a>
 							<p class="issue__content-desc">${item.DESCRIPTION}</p>
@@ -205,23 +204,6 @@ askQuestions().then(userResponse => {
       margin-bottom: 10px;
     }
 
-    #twiw__body .issue__counter {
-      display: inline-block;
-      background-color: violet;
-      height: 18px;
-      width: 18px;
-      border-radius: 50%;
-      line-height: 20px;
-      text-align: center;
-      background-color: #3f51b5;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 600;
-      margin-right: 10px;
-      margin-top: 5px;
-      padding-left: 1px;
-    }
-
     #twiw__body .issue__content-title {
       display: -webkit-flex;
       display: flex;
@@ -285,9 +267,13 @@ askQuestions().then(userResponse => {
       margin-top: 10px;
     }
 
+    #twiw__body .issue__footer .mailchimp-logo a {
+      border: none !important;
+    }
+
     @media all and (max-width: 480px) {
       #twiw__body {
-        padding: 5px !important;
+        padding: 10px !important;
       }
 
       #twiw__body .issue__footer {
@@ -305,16 +291,12 @@ askQuestions().then(userResponse => {
       }
 
       #twiw__body .issue__content-title {
-        font-size: 15px !important;
+        font-size: 16px !important;
       }
 
       #twiw__body .issue__content-desc {
-        font-size: 14px !important;
-        word-break: break-all;
-      }
-
-      #twiw__body .issue__counter {
-        display: none !important;
+        font-size: 15px !important;
+        word-break: break-word;
       }
 
       #twiw__body .issue__footer img {
@@ -337,7 +319,7 @@ askQuestions().then(userResponse => {
 
       #twiw__body .issue__content-info a,
       #twiw__body .issue__content-info span {
-        font-size: 12px;
+        font-size: 13px;
       }
     }
   </style>
