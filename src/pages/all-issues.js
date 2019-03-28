@@ -43,11 +43,11 @@ export default class IndexPage extends React.Component {
                       if (!published) return null
                       return (
                         <div className="issues__item" key={node.fields.slug}>
+                          <div className="issues__info">
+                            <h3 className="issues_no">{title.replace('#', '')}</h3>
+                            <time className="issues__date">{node.frontmatter.date}</time>
+                          </div>
                           <Link to={`/issues${node.fields.slug}`} className="issues__title">
-                            <div className="issues__info">
-                              <h3 className="issues_no">{title.replace('#', '')}</h3>
-                              <time className="issues__date">{node.frontmatter.date}</time>
-                            </div>
                             {contentTitle}
                           </Link>
                         </div>

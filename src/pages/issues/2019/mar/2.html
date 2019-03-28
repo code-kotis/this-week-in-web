@@ -123,9 +123,8 @@
 
         #twiw__body .issue__counter {
           display: inline-block;
-          background-color: violet;
-          height: 18px;
-          width: 18px;
+          height: 20px;
+          width: 20px;
           border-radius: 50%;
           line-height: 20px;
           text-align: center;
@@ -134,8 +133,6 @@
           font-size: 12px;
           font-weight: 600;
           margin-right: 10px;
-          margin-top: 5px;
-          padding-left: 1px;
         }
 
         #twiw__body .issue__content-title {
@@ -144,7 +141,7 @@
           -webkit-align-items: center;
           align-items: center;
           color: #4054c2;
-          font-size: 16px;
+          font-size: 17px;
         }
 
         #twiw__body .issue__content-desc {
@@ -201,6 +198,10 @@
           margin-top: 10px;
         }
 
+        #twiw__body .mailchimp-logo a {
+          border-bottom: 0 !important;
+        }
+
         @media all and (max-width: 480px) {
           #twiw__body {
             padding: 5px !important;
@@ -221,12 +222,12 @@
           }
 
           #twiw__body .issue__content-title {
-            font-size: 14px !important;
+            font-size: 16px !important;
           }
 
           #twiw__body .issue__content-desc {
-            font-size: 13px !important;
-            word-break: break-all;
+            font-size: 15px !important;
+            word-break: break-word;
           }
 
           #twiw__body .issue__counter {
@@ -241,7 +242,7 @@
           #twiw__body .issue__footer,
           #twiw__body .issue__footer em,
           #twiw__body .issue__footer p {
-            font-size: 11px;
+            font-size: 13px;
             width: 90%;
             margin: 10px auto !important;
             text-align: center;
@@ -253,7 +254,7 @@
 
           #twiw__body .issue__content-info a,
           #twiw__body .issue__content-info span {
-            font-size: 12px;
+            font-size: 14px;
           }
         }
       </style>
@@ -263,8 +264,8 @@
         <h1 class="nws__title">This Week In Web</h1>
         <div class="issue">
           <div class="issue__preview-info">
-            <h2 class="title">Issue #1</h2>
-            <time>March 21, 2019</time>
+            <h2 class="title">Issue #2</h2>
+            <time>March 28, 2019</time>
           </div>
           <div class="line"></div>
           <div class="issue__preview-content">
@@ -274,49 +275,37 @@
                   <tr>
                     <td>
                       <div class="issue__content">
-                        <div style="padding-top:15px !important;">
-                          <p style="line-height:25px;">
-                            Thanks for subscribing to our newsletter. We have an update for you! We have renamed
-                            <a href="pwa.tips" target="_blank">pwa.tips</a> to
-                            <a href="this-week-in-web.com" target="_blank">this-week-in-web.com</a>. This change is to bring more contents
-                            related to the web regularly.
+                        <div class="issue__content">
+                          <a href="https://reacttraining.com/blog/react-router-v5/" target="_blank" rel="noopener noreferrer">
+                            <span class="issue__content-title">React Router v5 with React 16 support</span>
+                          </a>
+                          <p class="issue__content-desc">
+                            Today, we are excited to announce the release of React Router version 5. You can get it using: This release is
+                            light on features and fixes, and is more focused on stability and compatibility and preparing the library for
+                            future releases.
                           </p>
-                        </div>
-                        <div style="padding-top:15px !important;">
-                          <p style="line-height:25px;">From now on, we will be posting the newsletter every week Thursday.</p>
+                          <div class="issue__content-info">
+                            <a href="https://reacttraining.com" target="_blank" rel="noopener noreferrer">reacttraining.com</a>
+                            <span>Michael Jackson</span>
+                          </div>
                         </div>
                       </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
                       <div class="issue__content">
-                        <a href="https://twitter.com/CompuIves/status/1108020133321031681" target="_blank" rel="noopener noreferrer">
-                          <span class="issue__content-title">CodeSandbox v3!</span>
+                        <a href="https://twitter.com/ChromeDevTools/status/1108443093865422848" target="_blank" rel="noopener noreferrer">
+                          <span class="issue__content-title">Capture Screenshot from command menu in Chrome v74</span>
                         </a>
                         <p class="issue__content-desc">
-                          New VSCode Extensions, Editor Redesign, Devtool functionality, Vetur + TS Refactoring support.
+                          Focus DevTools and then press Control+Shift+P or Command+Shift+P (Mac) to open the Command Menu.
                         </p>
                         <div class="issue__content-info">
-                          <a href="https://twitter.com/CompuIves/status/1108020133321031681" target="_blank" rel="noopener noreferrer"
+                          <a href="https://twitter.com/ChromeDevTools/status/1108443093865422848" target="_blank" rel="noopener noreferrer"
                             >twitter.com</a
                           >
-                          <span>Ives van Hoorne‏</span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="issue__content">
-                        <a href="https://twitter.com/addyosmani/status/1107891955420356608" target="_blank" rel="noopener noreferrer">
-                          <span class="issue__content-title">📊 Chrome UX Report</span>
-                        </a>
-                        <p class="issue__content-desc">
-                          Learn how real users experience your site with the ChromeUXReport Dashboard which Includes data for 5M sites. 📈
-                          Speed: First Contentful Paint, First Input Delay 📱 Device distribution 📡 Connection distribution (4G, 3G etc)
-                        </p>
-                        <div class="issue__content-info">
-                          <a href="https://twitter.com/addyosmani/status/1107891955420356608" target="_blank" rel="noopener noreferrer"
-                            >twitter.com</a
-                          >
-                          <span>Addy Osmani</span>
+                          <span>Chrome DevTools</span>
                         </div>
                       </div>
                     </td>
@@ -325,24 +314,50 @@
                     <td>
                       <div class="issue__content">
                         <a
-                          href="https://snyk.io/blog/making-sense-of-package-lock-files-in-the-npm-ecosystem"
+                          href="https://medium.com/dev-channel/two-http-headers-related-to-service-workers-you-never-may-have-heard-of-c8862f76cc60"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <span class="issue__content-title">Do you really know how a lockfile works for yarn and npm packages?</span>
+                          <span class="issue__content-title">Two HTTP headers related to Service Workers you never may have heard of</span>
                         </a>
                         <p class="issue__content-desc">
-                          Package lock files serve as a rich manifest of dependencies for projects that specify the exact version of
-                          dependencies to be installed, as well as the dependencies of those dependencies, and so on
+                          I was shocked that during now more than two years of supporting Service Worker implementations, I only found out
+                          about the service-worker-allowed header today
                         </p>
                         <div class="issue__content-info">
-                          <a
-                            href="https://snyk.io/blog/making-sense-of-package-lock-files-in-the-npm-ecosystem"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            >snyk.io</a
-                          >
-                          <span>Synk</span>
+                          <a href="https://medium.com" target="_blank" rel="noopener noreferrer">medium.com</a> <span>Thomas Steiner</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="issue__content">
+                        <a href="https://v8.dev/blog/v8-release-74" target="_blank" rel="noopener noreferrer">
+                          <span class="issue__content-title">Private class fields landed in V8 Engine</span>
+                        </a>
+                        <p class="issue__content-desc">
+                          Every six weeks, we create a new branch of V8 as part of our release process. Each version is branched from V8’s
+                          Git master immediately before a Chrome Beta milestone
+                        </p>
+                        <div class="issue__content-info">
+                          <a href="https://v8.dev" target="_blank" rel="noopener noreferrer">v8.dev</a> <span>V8 Team</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="issue__content">
+                        <a href="https://dev.to/selbekk/redux-in-27-lines-2i92" target="_blank" rel="noopener noreferrer">
+                          <span class="issue__content-title">Redux in 27 lines</span>
+                        </a>
+                        <p class="issue__content-desc">
+                          This article will take you through how you can implement an API similar to Redux yourself. Not because you'll want
+                          to do just that, but because it'll help you understand how Redux works!
+                        </p>
+                        <div class="issue__content-info">
+                          <a href="https://dev.to" target="_blank" rel="noopener noreferrer">dev.to</a> <span>selbekk</span>
                         </div>
                       </div>
                     </td>
@@ -351,23 +366,16 @@
                     <td>
                       <div class="issue__content">
                         <a
-                          href="https://www.netlify.com/blog/2019/03/11/deep-dive-how-do-react-hooks-really-work/"
+                          href="https://dougsillars.com/2019/03/22/websites-that-keep-loading-and-loading-and-loading/"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <span class="issue__content-title">Deep dive: How do React hooks really work?</span>
+                          <span class="issue__content-title">Websites that Keep Loading, and Loading and Loading….</span>
                         </a>
-                        <p class="issue__content-desc">
-                          Hooks are a fundamentally simpler way to encapsulate stateful behavior and side effects in user interfaces.
-                        </p>
+                        <p class="issue__content-desc">Have you ever wondered what happens when you minimize the browser on your phone?</p>
                         <div class="issue__content-info">
-                          <a
-                            href="https://www.netlify.com/blog/2019/03/11/deep-dive-how-do-react-hooks-really-work/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            >www.netlify.com</a
-                          >
-                          <span>Netlify</span>
+                          <a href="https://dougsillars.com" target="_blank" rel="noopener noreferrer">dougsillars.com</a>
+                          <span>Dougsillars</span>
                         </div>
                       </div>
                     </td>
@@ -375,19 +383,13 @@
                   <tr>
                     <td>
                       <div class="issue__content">
-                        <a href="https://overreacted.io/writing-resilient-components/" target="_blank" rel="noopener noreferrer">
-                          <span class="issue__content-title">Writing Resilient Components</span>
+                        <a href="https://twitter.com/Phacks/status/1110161414025555968" target="_blank" rel="noopener noreferrer">
+                          <span class="issue__content-title">Web Performance metrics explained in tweets</span>
                         </a>
-                        <p class="issue__content-desc">
-                          When people start learning React, they often ask for a style guide. While it’s a good idea to have some consistent
-                          rules applied across a project, a lot of them are arbitrary — and so React doesn’t have a strong opinion about
-                          them
-                        </p>
+                        <p class="issue__content-desc">Thread Time ! Web Performance metrics explained in a single tweet each</p>
                         <div class="issue__content-info">
-                          <a href="https://overreacted.io/writing-resilient-components/" target="_blank" rel="noopener noreferrer"
-                            >overreacted.io</a
-                          >
-                          <span>Dan Abramov</span>
+                          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">twitter.com</a>
+                          <span>Nicolas Goutay</span>
                         </div>
                       </div>
                     </td>
@@ -396,24 +398,19 @@
                     <td>
                       <div class="issue__content">
                         <a
-                          href="https://discuss.httparchive.org/t/analyzing-lighthouse-scores-across-the-web/1600"
+                          href="https://medium.com/@firt/whats-new-on-ios-12-2-for-progressive-web-apps-75c348f8e945"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <span class="issue__content-title">Analyzing Lighthouse Scores Across the Web</span>
+                          <span class="issue__content-title">What’s new on iOS 12.2 for Progressive Web Apps</span>
                         </a>
                         <p class="issue__content-desc">
-                          Recently while analyzing a poor performing website, I wondered how many sites in the HTTP Archive perform so
-                          poorly that they would get a single digit Performance score!
+                          the biggest step forward in the last year, addressing the two most annoying problems we’ve been dealing with PWAs:
+                          reload effect and OAuth logins
                         </p>
                         <div class="issue__content-info">
-                          <a
-                            href="https://discuss.httparchive.org/t/analyzing-lighthouse-scores-across-the-web/1600"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            >discuss.httparchive.org</a
-                          >
-                          <span>Paul Calvano</span>
+                          <a href="https://medium.com" target="_blank" rel="noopener noreferrer">medium.com</a>
+                          <span>Maximiliano Firtman</span>
                         </div>
                       </div>
                     </td>
@@ -422,25 +419,21 @@
                     <td>
                       <div class="issue__content">
                         <a
-                          href="https://2019.jsconf.eu/news/how-we-built-the-fastest-conference-website-in-the-world/"
+                          href="https://www.xda-developers.com/hands-on-microsoft-edge-chromium-leaked"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <span class="issue__content-title">How we built the fastest conference website in the world</span>
-                        </a>
-                        <p class="issue__content-desc">
-                          I have no idea whether this is the fastest conference website in the world but I also don’t know that it isn’t;
-                          and I’ve spent a completely unreasonable amount of time trying to make it be the fastest conference website in the
-                          world.
-                        </p>
-                        <div class="issue__content-info">
-                          <a
-                            href="https://2019.jsconf.eu/news/how-we-built-the-fastest-conference-website-in-the-world/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            >2019.jsconf.eu</a
+                          <span class="issue__content-title"
+                            >Hands-on with a leaked build of the new Microsoft Edge browser based on Chromium</span
                           >
-                          <span>Malte Ubl</span>
+                        </a>
+                        <p class="issue__content-desc">
+                          For months now, Microsoft has been working on a version of Microsoft Edge based on Chromium. It promises to make
+                          big improvements to Edge, which is not very popular, and after using it I can say it really does
+                        </p>
+                        <div class="issue__content-info">
+                          <a href="https://xda-developers.com" target="_blank" rel="noopener noreferrer">xda-developers.com</a>
+                          <span>Max Weinbach</span>
                         </div>
                       </div>
                     </td>
@@ -448,79 +441,13 @@
                   <tr>
                     <td>
                       <div class="issue__content">
-                        <a href="humanebydesign.com" target="_blank" rel="noopener noreferrer">
-                          <span class="issue__content-title">humane by design</span>
+                        <a href="https://www.checklist.design/" target="_blank" rel="noopener noreferrer">
+                          <span class="issue__content-title">Checklist design for web apps</span>
                         </a>
-                        <p class="issue__content-desc">
-                          The exponential growth of mobile technology has ushered in an age where time and attention is an increasingly
-                          scarce resource.
-                        </p>
+                        <p class="issue__content-desc">A collection of the best UX and UI practices.</p>
                         <div class="issue__content-info">
-                          <a href="humanebydesign.com" target="_blank" rel="noopener noreferrer">humanebydesign.com</a>
-                          <span>Jon Yablonski</span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="issue__content">
-                        <a href="https://jakearchibald.com/2019/f1-perf" target="_blank" rel="noopener noreferrer">
-                          <span class="issue__content-title">Who has the fastest website in F1?</span>
-                        </a>
-                        <p class="issue__content-desc">
-                          I was trying to make my predictions for the new Formula One season by studying the aerodynamics of the cars, their
-                          cornering speeds, their ability to run with different amounts of fuel. Then it hit me: I have no idea what I'm
-                          doing.
-                        </p>
-                        <div class="issue__content-info">
-                          <a href="https://jakearchibald.com/2019/f1-perf" target="_blank" rel="noopener noreferrer">jakearchibald.com</a>
-                          <span>Jake Archibald</span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="issue__content">
-                        <a href="https://twitter.com/tomayac/status/1108293149963751424" target="_blank" rel="noopener noreferrer">
-                          <span class="issue__content-title">Element Timing API (Origin Trial)</span>
-                        </a>
-                        <p class="issue__content-desc">
-                          The ElementTiming API will allow developers to know when certain important image elements are first displayed on
-                          the screen
-                        </p>
-                        <div class="issue__content-info">
-                          <a href="https://twitter.com/tomayac/status/1108293149963751424" target="_blank" rel="noopener noreferrer"
-                            >twitter.com</a
-                          >
-                          <span>Thomas Steiner</span>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="issue__content">
-                        <a
-                          href="https://hacks.mozilla.org/2019/03/firefox-66-the-sound-of-silence/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <span class="issue__content-title">Firefox 66: The Sound of Silence</span>
-                        </a>
-                        <p class="issue__content-desc">
-                          Firefox 66 is out, and brings with it a host of great new features like screen sharing, scroll anchoring, autoplay
-                          blocking for audible media, and initial support for the Touch Bar on macOS
-                        </p>
-                        <div class="issue__content-info">
-                          <a
-                            href="https://hacks.mozilla.org/2019/03/firefox-66-the-sound-of-silence/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            >hacks.mozilla.org</a
-                          >
-                          <span>Mozilla Firefox</span>
+                          <a href="https://checklist.design/" target="_blank" rel="noopener noreferrer">checklist.design</a>
+                          <span>George Hatzis</span>
                         </div>
                       </div>
                     </td>
@@ -538,7 +465,8 @@
             <p>Want to change how you receive these emails?</p>
             You can <a href="*|UPDATE_PROFILE|*">update your preferences</a> or <a href="*|UNSUB|*">unsubscribe from this list</a>
             <br />
-            <br />*|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*
+            <br />
+            <p class="mailchimp-logo">*|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*</p>
           </div>
         </div>
       </div>
