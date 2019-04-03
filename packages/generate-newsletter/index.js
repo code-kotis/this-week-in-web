@@ -347,7 +347,7 @@ askQuestions().then(userResponse => {
       <p>Want to change how you receive these emails?</p>
       You can <a href="*|UPDATE_PROFILE|*">update your preferences</a> or <a href="*|UNSUB|*">unsubscribe from this list</a>
       <br>
-      <br>*|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*
+      <p class="mailchimp-logo"><br>*|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*</p>
     </div>
     </div>
 </div>
