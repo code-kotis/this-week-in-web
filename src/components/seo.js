@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({ description, lang, googleSiteVerification, meta, keywords, title }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -79,6 +79,7 @@ SEO.defaultProps = {
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
+  googleSiteVerification: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
@@ -93,6 +94,7 @@ const detailsQuery = graphql`
         title
         description
         author
+        googleSiteVerification
       }
     }
   }
