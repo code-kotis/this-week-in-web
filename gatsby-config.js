@@ -3,6 +3,7 @@ module.exports = {
     title: `This Week In Web`,
     description: `Get weekly coverage about what's happening in web community. No spams.`,
     author: `Code Kotis`,
+    googleSiteVerification: `6XCbcTiFO0Pr-zLTi4QjVNhW-arcF8fhgIYYdFlu8dY`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
