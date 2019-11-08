@@ -1,0 +1,21 @@
+# Run any tests
+  - run: yarn workspaces run test --ci
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@master
+      - name: Run Lighthouse and test budgets
+        uses: treosh/lighthouse-ci-action@v1
+        with:
+          urls: |
+            https://this-week-in-web.com
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@master
+        with:
+          name: lighthouse-results
+          path: './results'
