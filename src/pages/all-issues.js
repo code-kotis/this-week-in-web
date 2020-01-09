@@ -1,7 +1,7 @@
 import React from 'react'
 import get from 'lodash/get'
 import groupBy from 'lodash/groupBy'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { getMonthName } from '../utils/date'
 
 import Layout from '../components/layout'
